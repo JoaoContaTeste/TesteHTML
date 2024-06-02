@@ -1,0 +1,108 @@
+---
+title: TO TESTANDOO O QUARTO
+author: João Marcos
+lang: pt
+date: "`r format(Sys.Date())`"
+date-format: short
+toc: true
+title-block-banner: header.jpeg
+reference-location: margin #deixa todas as referencias na margem do relatorio
+citation-location: margin #deixa todas as citações na margem do relatorio
+format: 
+  html:
+    theme:
+      light: journal 
+      dark: darkly
+bibliography: references.bib
+---
+
+# Oii
+
+Meu primeiro **Quarto Document** \n
+
+$$
+\int_{a}^{b}f(x) dx = 1
+$$
+
+::: callout-note
+ai meu deus
+:::
+
+::: callout-warning
+aimdsss
+:::
+
+::: callout-important
+AAAAAAAAAAAAAA
+:::
+
+```{r}
+#| fig-width: 5
+#| fig-height: 2.5
+#| warning: false
+#| fig-align: "center"
+
+library(ggplot2)
+plot <- ggplot(iris,
+aes(x = Species,
+y = Sepal.Length)) +
+
+geom_boxplot(aes(fill=Species))+
+xlab("Espécies") +
+ylab("Sepal Length") +
+theme_grey()
+
+plotly::ggplotly(plot)
+```
+
+aaa
+
+Fonte : [Wikipedia](https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal)
+
+# Tabsets
+
+::: panel-tabset
+## Logo D.A.H.A
+
+<center>![](logoda.png)</center>
+
+## Grafico
+
+<center>![](grevegrafico.png)</center>
+
+## VIRTUAL ANGEL
+
+{{< video https://www.youtube.com/watch?v=qCodzDc61oc >}}
+:::
+
+> Gente o negocio do whatsapp funciona aqui...
+
+# Olha que massa
+
+Informações sobre o pacote tidyverse [@tidyverse].
+
+# Tabela com os Dados
+
+(quando usa o tema escuro, a tabela some 😔, preciso saber ~~mecher mexer~~ em html e CSS pra arrumar isso )
+
+```{r}
+iris |>
+DT::datatable(options = list(pageLength=5,dom = 'Bfrtip'),class = 'cell-border stripe')
+```
+
+# Matriz Iterativa
+
+Faz isso usando o pacote `pairs D3` [@pairsD3] (n sei pq mas com esse pacote n funciona a citação)
+
+```{r}
+#| fig-cap: "Matriz Iterativa Iris"
+#| code-fold: true
+iris |>
+pairsD3::pairsD3(iris[,1:4],group=iris[,5])
+```
+
+# Bye
+
+Devo tudo a essa diva
+
+{{< video https://www.youtube.com/watch?v=WbrbIUwe2-4 >}}
